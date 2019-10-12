@@ -1,0 +1,18 @@
+<% include partials/header %>
+<div class="cards">
+  <% posts.forEach(post => {%>
+  <div class="card" style="width: 20rem;">
+    <img class="card-img-top" src="<%= post.image %>" alt="Image" />
+    <div class="card-body">
+      <h5 class="card-title"><%= post.title %></h5>
+      <p class="card-text"><%= post.description.substring(0, 100) %></p>
+    </div>
+    <div class="card-body">
+      <button class="btn btn-block btn-primary">
+        <a href="/post/<%=post._id %>" class="card-link">Show More</a>
+      </button>
+    </div>
+  </div>
+  <%}) %>
+</div>
+<% include partials/footer %>
