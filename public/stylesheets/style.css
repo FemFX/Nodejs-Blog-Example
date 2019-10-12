@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: #fff;
+}
+a:hover {
+  color: #ccc;
+}
+li {
+  list-style: none;
+}
+.item{
+    margin-left: 10px;
+}
