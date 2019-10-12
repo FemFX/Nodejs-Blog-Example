@@ -1,0 +1,28 @@
+<% include partials/header %>
+<div class="container ml-12 pt-5">
+  <h3 class="pt-5">Add Post</h3>
+</div>
+<form action="/post/new" method="POST" class="container">
+  <input
+    type="text"
+    name="image"
+    class="form-control"
+    placeholder="Image"
+  /><br />
+  <input 
+    type="text"
+    name="title"
+    class="form-control"
+    placeholder="Title"
+  /><br />
+  <textarea
+    name="description"
+    class="form-control"
+    placeholder="Description"
+    cols="30"
+    rows="10"
+  ></textarea
+  ><br />
+  <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+<% include partials/footer %>

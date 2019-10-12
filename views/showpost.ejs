@@ -1,0 +1,51 @@
+<% include partials/header %>
+<div class="post text-center">
+  <h2 class="ml-5"><%= post.title %></h2>
+  <div class="ui centered rounded top attached">
+    <div class="item">
+      <img
+        class="ui image"
+        src="<%= post.image %>"
+        alt="Post Image"
+        width="500"
+      />
+      <div class="content">
+        <small>created at: <%= post.date.toDateString() %></small>
+      </div>
+      <div class="description">
+        <p><%= post.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<h3>Comments</h3>
+<% post.comments.forEach(function (comment) { %>
+<div class="comment">
+  <div class="content">
+    <a class="author"><%= comment.author.username %></a>
+    <div class="metadata">
+      <span class="date"><%= comment.createdAt.toDateString() %></span>
+    </div>
+    <div class="text">
+      <%= comment.text %>
+    </div>
+  </div>
+</div>
+<% }) %>
+<form
+  action="/post/<%=post._id %>/comments"
+  method="POST"
+  class="mt-5 mb-5 text-center"
+>
+  <textarea
+    name="text"
+    id=""
+    cols="30"
+    rows="5"
+    placeholder="Your text"
+  ></textarea>
+  <br />
+  <button type="submit" class="btn btn-warning">Add Comments</button>
+  <br />
+</form>
+<% include partials/footer %>
